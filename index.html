@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <header>
+        <a class="skip" href = "#main">Skip to Main Content</a>
+        <nav>
+            <ul class="navigation">
+                <li class="item1 active-page"><a href = "index.html" >Home</a></li>
+                <li class="item2"><a href = "pets.html">Pets</a></li>
+                <li class="item3"><a href = "travel.html">Travel</a></li>
+                <li class="item4"><a href = "recipes.html">Recipes</a></li>
+            </ul>
+        </nav>
+	</header>
+    
+    <main id="main">
+        <h1 class = "top">Home</h1>
+        <div class="intro">
+            <p>Welcome to <strong>TheEverythingWebsite</strong>, your go-to destination for all things pets, recipes, and travel!<br> Explore a world of captivating content where we cater to your love for furry companions, culinary delights, and globetrotting adventures. </p>
+            <p>Below you'll find a preview of what's to come.</p>
+        </div>
+        <div>
+            <h2>Photo Gallery</h2>
+            <div class="slideshow-container">
+                <div class="slide">
+                  <img src="images/paris_main.jpg" alt="The tops of buildings with the Eiffel Tower in the background" style="width:100%">
+                </div>
+              
+                <div class="slide">
+                  <img src="images/guacamole.jpg" alt="Guacamole in a white bowl surrounded by vegetables" style="width:100%">
+                </div>
+              
+                <div class="slide">
+                  <img src="images/bacon.jpg" alt="Brown labradoodle wearing colorful lei" style="width:100%">
+                </div>
+              
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div>
+        </div>
+    </main>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            slideIndex += n;
+            showSlides(slideIndex);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex-1].style.display = "block";
+        }
+    </script>
+</body>
+</html>
